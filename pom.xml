@@ -7,20 +7,22 @@
   <version>1.0-SNAPSHOT</version>
   <name>fileupload-client Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jhudson</groupId>
-      <artifactId>JavaUploadServlet</artifactId>
-      <version>0.3-SNAPSHOT</version>
-      <scope>runtime</scope>
-    </dependency>
-  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.jhudson</groupId>
+        <artifactId>JavaUploadServlet</artifactId>
+        <version>0.3-SNAPSHOT</version>
+        <scope>runtime</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <build>
     <finalName>fileupload-client</finalName>
   </build>
