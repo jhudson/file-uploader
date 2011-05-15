@@ -359,7 +359,7 @@ qq.FileUploaderBasic.prototype = {
     _onProgress: function(id, fileName, loaded, total){        
     },
     _onComplete: function(id, fileName, result){
-        this._filesInProgress--;                 
+        this._filesInProgress--;
         if (result.error){
             this._options.showMessage(result.error);
         }             
@@ -492,6 +492,7 @@ qq.FileUploader = function(o){
 
         // template for one item in file list
         fileTemplate: '<li>' +
+                '<span class="qq-upload-tick"></span>' +
                 '<span class="qq-upload-file"></span>' +
                 '<span class="qq-upload-spinner"></span>' +
                 '<span class="qq-upload-size"></span>' +
@@ -616,7 +617,8 @@ qq.extend(qq.FileUploader.prototype, {
         qq.remove(this._find(item, 'spinner'));
         
         if (result.success){
-            qq.addClass(item, this._classes.success);    
+            console.info(this._find(item, 'cancel'));
+            qq.addClass(item, this._classes.success);
         } else {
             qq.addClass(item, this._classes.fail);
         }         
